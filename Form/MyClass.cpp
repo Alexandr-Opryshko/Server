@@ -9,12 +9,12 @@ namespace Form {
 		if (this->column < column) {
 			int** arrayTemp;
 
-			arrayTemp = new int* [column+1]{};						// массив указателей
-			for (int i = 0; i < column; i++) {				// 
+			arrayTemp = new int* [column+1]{};							// массив указателей
+			for (int i = 0; i < column; i++) {							// 
 
-				arrayTemp[i] = new int[size+1]{};					// инициализация указателей на массив объектов
-				for (int j = 0; j < size && j < this->size;j++) {				// то пройдем по указателям объекта
-					arrayTemp[i][j] = arrayBazaObject[i][j];	// скопируем указатели объекта
+				arrayTemp[i] = new int[size+1]{};						// инициализация указателей на массив объектов
+				for (int j = 0; j < size && j < this->size;j++) {		// то пройдем по указателям объекта
+					arrayTemp[i][j] = arrayBazaObject[i][j];			// скопируем указатели объекта
 				}
 			}
 			if (this->column > 0) {
@@ -32,9 +32,9 @@ namespace Form {
 	BazaObject::BazaObject() {
 		this->column = directionConnectDef + 1;
 		this->size = numberObjectDef + 1;
-		arrayBazaObject = new int* [this->column]{};		// массив указателей
-		for (int i = 0; i < this->column; i++){			// 
-			arrayBazaObject[i] = new int[this->size]{};	// инициализация указателей
+		arrayBazaObject = new int* [this->column]{};					// массив указателей
+		for (int i = 0; i < this->column; i++){							// 
+			arrayBazaObject[i] = new int[this->size]{};					// инициализация указателей
 		}
 		
 	}

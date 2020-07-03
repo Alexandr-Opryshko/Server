@@ -6,7 +6,7 @@ namespace Form {
 	/// <summary> Set метод для установки протокола </summary>
 	/// <param name="typeProtocol"></param>
 	/// <returns></returns>
-	int SettingsServer::Set_typeProtocol(int typeProtocol) {						// тип протокола (TCP/UDP)
+	int SettingsServer::Set_typeProtocol(int typeProtocol) {								// тип протокола (TCP/UDP)
 		if (typeProtocol != TCP && typeProtocol != UDP) 
 			typeProtocol = typeProtocolDef;
 		return this->typeProtocol = typeProtocol;
@@ -14,18 +14,18 @@ namespace Form {
 	/// <summary> Set метод для установки времени ожидания данных для контроля связи </summary>
 	/// <param name="timeControl"></param>
 	/// <returns></returns>
-	int SettingsServer::Set_timeControl(int timeControl) {							// время проверки наличия связи(сек)
-		if (timeControl < 60) timeControl = timeControlMin;							// установим минимальное значение
+	int SettingsServer::Set_timeControl(int timeControl) {									// время проверки наличия связи(сек)
+		if (timeControl < timeControlMin) timeControl = timeControlMin;						// установим минимальное значение
 		return this->timeControl = timeControl;
 	}
 	/// <summary> Set метод для установки Своего IP </summary>
 	/// <param name="localHostIP"></param>
 	/// <returns></returns>
-	unsigned long SettingsServer::Set_localHostIP(unsigned long localHostIP) {		// Свой IP
+	unsigned long SettingsServer::Set_localHostIP(unsigned long localHostIP) {				// Свой IP
 		if (localHostIP < IP_Min) localHostIP = IPDef;
 		return this->localHostIP = localHostIP;
 	}
-	unsigned int SettingsServer::Set_localHostPort(unsigned int localHostPort) {	// свой Port
+	unsigned int SettingsServer::Set_localHostPort(unsigned int localHostPort) {			// свой Port
 		return this->localHostPort = localHostPort;
 	}
 
