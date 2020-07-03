@@ -118,8 +118,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Get_MyClass.cpp" />
     <ClCompile Include="MyClass.cpp" />
     <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="Set_MyClass.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyClass.h" />
