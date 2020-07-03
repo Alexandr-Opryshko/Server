@@ -54,15 +54,15 @@ namespace Form {
 //################################## Сервер ############ Настройки соединений пульта ##################################
 	class SettingsServer {
 	public:
-		const int Get_typeProtocol() const;						// тип протокола (TCP/UDP)
-		const int Get_timeControl() const;						// время проверки наличия связи(сек)
-		const unsigned long Get_localHostIP() const;	// Свой IP
-		const unsigned int Get_localHostPort() const;					// свой Port
+		const int Get_typeProtocol() const;							// тип протокола (TCP/UDP)
+		const int Get_timeControl() const;							// время проверки наличия связи(сек)
+		const unsigned long Get_localHostIP() const;				// Свой IP
+		const unsigned int Get_localHostPort() const;				// свой Port
 
 		int Set_typeProtocol(int typeProtocol);						// тип протокола (TCP/UDP)
 		int Set_timeControl(int timeControl);						// время проверки наличия связи(сек)
 		unsigned long Set_localHostIP(unsigned long localHostIP);	// Свой IP
-		unsigned int Set_localHostPort(unsigned int localHostPort);					// свой Port
+		unsigned int Set_localHostPort(unsigned int localHostPort);	// свой Port
 
 		SettingsServer(
 			int typeProtocol,

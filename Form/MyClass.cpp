@@ -17,10 +17,15 @@ namespace Form {
 					arrayTemp[i][j] = arrayBazaObject[i][j];	// скопируем указатели объекта
 				}
 			}
-			delete[] arrayBazaObject;
-
-			
-			//this->arrayBazaObject = arrayTemp;
+			if (this->column > 0) {
+				for (int i = 0; i < this->column; i++) {
+					delete[] arrayBazaObject[i];
+				}
+				delete[] arrayBazaObject;
+			}
+			this->column = column;
+			this->size = size;
+			this->arrayBazaObject = arrayTemp;
 		}
 	}
 
@@ -35,7 +40,9 @@ namespace Form {
 	}
 
 	BazaObject::~BazaObject() {
-
+		for (int i = 0; i < this->column; i++) {
+			delete[] arrayBazaObject[i];
+		}
 		delete[] arrayBazaObject;
 	}
 
