@@ -40,6 +40,21 @@ namespace Form {
 //################################## Данные объектового оборудования ##################################################
 	public class Object : public BazaObject {
 	public:
+
+		const unsigned int Get_directionConnect() const;	// Напрвление подключения (0-99)
+		const unsigned int Get_numberObject() const;			// номер объекта (0-9999)
+		const int Get_typePPC() const;										// тип устройства
+		const unsigned long Get_ipPPC() const;						// IP прибора
+		const unsigned int Get_portPPC() const;						// Port прибора
+
+		unsigned int Set_directionConnect(unsigned int directionConnect);	// Напрвление подключения (0-99)
+		unsigned int Set_numberObject(unsigned int numberObject);			// номер объекта (0-9999)
+		int Set_typePPC(int typePPC);										// тип устройства
+		unsigned long Set_ipPPC(unsigned long ipPPC);						// IP прибора
+		unsigned int Set_portPPC(unsigned int portPPC);						// Port прибора
+
+		
+
 		Object();
 		~Object();
 

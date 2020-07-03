@@ -2,6 +2,22 @@
 
 namespace Form {
 
+	const unsigned int Object::Get_directionConnect() const {	// Напрвление подключения (0-99)
+		return this->directionConnect;
+	}
+	const unsigned int Object::Get_numberObject() const {			// номер объекта (0-9999)
+		return this->numberObject;
+	}
+	const int Object::Get_typePPC() const {										// тип устройства
+		return this->typePPC;
+	}
+	const unsigned long Object::Get_ipPPC() const {						// IP прибора
+		return this->ipPPC;
+	}
+	const unsigned int Object::Get_portPPC() const {						// Port прибора
+		return this->portPPC;
+	}
+
 	//###################################################################
 
 	/// <summary> Get метод типа протокола связи </summary>

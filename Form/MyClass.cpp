@@ -77,10 +77,10 @@ namespace Form {
 		unsigned long localHostIP,						// Свой IP
 		unsigned int localHostPort						// свой Port
 	) {
-		this->typeProtocol = typeProtocol;				// тип протокола (TCP/UDP)
-		this->timeControl = timeControl;				// время проверки наличия связи(сек)
-		this->localHostIP = localHostIP;				// Свой IP
-		this->localHostPort = localHostPort;			// свой Port
+		Set_typeProtocol(typeProtocol);					// тип протокола (TCP/UDP)
+		Set_timeControl(timeControl);					// время проверки наличия связи(сек)
+		Set_localHostIP(localHostIP);					// Свой IP
+		Set_localHostPort(localHostPort);				// свой Port
 	}
 	/// <summary> Конструктор сервера по умолчанию </summary>
 	/// <returns></returns>
@@ -123,10 +123,10 @@ namespace Form {
 		localHostIP,									// Свой IP
 		localHostPort									// свой Port
 	){
-		this->serverIP = serverIP;						// IP удаленного сервера
-		this->serverPort = serverPort;					// Port удаленного сервера
-		this->serverRezervIP = serverRezervIP;			// IP резервного удаленного сервера
-		this->serverRezervPort = serverRezervPort;		// Port резервного удаленного сервера
+		Set_serverIP(serverIP);							// IP удаленного сервера
+		Set_serverPort(serverPort);						// Port удаленного сервера
+		Set_serverRezervIP(serverRezervIP);				// IP резервного удаленного сервера
+		Set_serverRezervPort(serverRezervPort);			// Port резервного удаленного сервера
 	}
 	/// <summary> Конструктор IP-клиента по умолчанию </summary>
 	/// <returns></returns>

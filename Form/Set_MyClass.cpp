@@ -2,6 +2,24 @@
 
 namespace Form {
 
+
+	unsigned int Object::Set_directionConnect(unsigned int directionConnect) {	// Напрвление подключения (0-99)
+
+	}
+	unsigned int Object::Set_numberObject(unsigned int numberObject) {			// номер объекта (0-9999)
+
+	}
+	int Object::Set_typePPC(int typePPC) {						// тип устройства
+	
+	}
+	unsigned long Object::Set_ipPPC(unsigned long ipPPC) {							// IP прибора
+
+	}
+	unsigned int Object::Set_portPPC(unsigned int portPPC) {						// Port прибора
+
+	}
+
+
 //################################################################ Сервер ##############################################
 	/// <summary> Set метод для установки протокола </summary>
 	/// <param name="typeProtocol"></param>
