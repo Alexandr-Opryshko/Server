@@ -4,12 +4,57 @@
 namespace Form {
 	
 
-	Object::Object() {
+	//#############################################################################################################
+	BazaObject::BazaObject(int column, int size) {
+		if (this->column < column) {
+			int** arrayTemp;
+
+			arrayTemp = new int* [column+1]{};						// массив указателей
+			for (int i = 0; i < column; i++) {				// 
+
+				arrayTemp[i] = new int[size+1]{};					// инициализация указателей на массив объектов
+				for (int j = 0; j < size && j < this->size;j++) {				// то пройдем по указателям объекта
+					arrayTemp[i][j] = arrayBazaObject[i][j];	// скопируем указатели объекта
+				}
+			}
+			delete[] arrayBazaObject;
+
+			
+			//this->arrayBazaObject = arrayTemp;
+		}
 	}
 
+	BazaObject::BazaObject() {
+		this->column = directionConnectDef + 1;
+		this->size = numberObjectDef + 1;
+		arrayBazaObject = new int* [this->column]{};		// массив указателей
+		for (int i = 0; i < this->column; i++){			// 
+			arrayBazaObject[i] = new int[this->size]{};	// инициализация указателей
+		}
+		
+	}
+
+	BazaObject::~BazaObject() {
+
+		delete[] arrayBazaObject;
+	}
+
+	//#############################################################################################################
+	
+	/// <summary> Конструктор создания объектового устройства по умолчанию </summary>
+	/// <returns></returns>
+	Object::Object() {	
+		this->directionConnect = directionConnectDef;	// Напрвление подключения (0-99)
+		this->numberObject = numberObjectDef;			// номер объекта (0-9999)
+		this->typePPC = typePPCDef;						// тип устройства
+		this->ipPPC = IPDef;							// IP прибора
+		this->portPPC = PortDef;						// Port прибора
+	}
+	/// <summary> Деструктор объектового устройства </summary>
+	/// <returns></returns>
 	Object::~Object() {
+		delete this;
 	}
-
 
 	//#############################################################################################################
 	
@@ -42,6 +87,7 @@ namespace Form {
 	/// <summary> Деструктор сервера </summary>
 	/// <returns></returns>
 	SettingsServer::~SettingsServer() {
+		delete this;
 	}
 	//#############################################################################################################
 	
@@ -84,7 +130,9 @@ namespace Form {
 		unsigned int serverRezervPort = PortDef;		// Port резервного удаленного сервера
 
 	}
-
+	/// <summary> Деструктор IP клиента </summary>
+	/// <returns></returns>
 	SettingsIPClient::~SettingsIPClient() {
+		delete this;
 	}
 }

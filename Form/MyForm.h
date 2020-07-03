@@ -1,5 +1,6 @@
 #pragma once
 #include<Windows.h>
+#include"MyClass.h"
 
 namespace Form {
 
@@ -22,6 +23,7 @@ namespace Form {
 			//
 			//TODO: добавьте код конструктора
 			//
+			BazaObject dataBaza(2,5);
 		}
 
 	protected:

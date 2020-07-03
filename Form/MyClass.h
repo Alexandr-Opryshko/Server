@@ -11,6 +11,10 @@ namespace Form {
 	using namespace System::Drawing;
 	using namespace std;
 
+#define directionConnectDef	0					// Напрвление подключения (0-99)
+#define numberObjectDef		0					// номер объекта (0-9999)
+#define typePPCDef			0					// тип устройства
+
 #define TCP	6
 #define UDP 17
 #define typeProtocolDef	TCP
@@ -20,8 +24,21 @@ namespace Form {
 #define PortDef	10000
 #define IP_Min	0x1000001
 
-//#####################################################################################################################
-	public class Object {
+//################################## База данных созданных объектов ###################################################
+	public class BazaObject {
+	public:
+		BazaObject(int column, int size);
+		BazaObject();
+		~BazaObject();
+
+	private:
+		int column=0;
+		int size=0;
+		int **arrayBazaObject;
+	};
+
+//################################## Данные объектового оборудования ##################################################
+	public class Object : public BazaObject {
 	public:
 		Object();
 		~Object();
@@ -62,13 +79,14 @@ namespace Form {
 		unsigned long localHostIP;						// Свой IP
 		unsigned int localHostPort;						// свой Port
 	};
+
 //################################## Клиент ############ Настройки соединений пульта ##################################
 	class SettingsIPClient : public SettingsServer {
 	public:
-		const unsigned long Set_serverIP() const;					// IP удаленного сервера
-		const unsigned int Set_serverPort() const;				// Port удаленного сервера
-		const unsigned long Set_serverRezervIP() const;		// IP резервного удаленного сервера
-		const unsigned int Set_serverRezervPort() const;	// Port резервного удаленного сервера
+		const unsigned long Get_serverIP() const;					// IP удаленного сервера
+		const unsigned int Get_serverPort() const;				// Port удаленного сервера
+		const unsigned long Get_serverRezervIP() const;		// IP резервного удаленного сервера
+		const unsigned int Get_serverRezervPort() const;	// Port резервного удаленного сервера
 
 		unsigned long Set_serverIP(unsigned long serverIP);					// IP удаленного сервера
 		unsigned int Set_serverPort(unsigned int serverPort);				// Port удаленного сервера
@@ -93,4 +111,5 @@ namespace Form {
 		unsigned long serverRezervIP;					// IP резервного удаленного сервера
 		unsigned int serverRezervPort;					// Port резервного удаленного сервера
 	};
+
 }
