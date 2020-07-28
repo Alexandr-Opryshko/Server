@@ -41,11 +41,11 @@ namespace Form {
 	public class Object : public BazaObject {
 	public:
 
-		const unsigned int Get_directionConnect() const;	// Напрвление подключения (0-99)
-		const unsigned int Get_numberObject() const;			// номер объекта (0-9999)
+		const unsigned int Get_directionConnect() const;					// Напрвление подключения (0-99)
+		const unsigned int Get_numberObject() const;						// номер объекта (0-9999)
 		const int Get_typePPC() const;										// тип устройства
-		const unsigned long Get_ipPPC() const;						// IP прибора
-		const unsigned int Get_portPPC() const;						// Port прибора
+		const unsigned long Get_ipPPC() const;								// IP прибора
+		const unsigned int Get_portPPC() const;								// Port прибора
 
 		unsigned int Set_directionConnect(unsigned int directionConnect);	// Напрвление подключения (0-99)
 		unsigned int Set_numberObject(unsigned int numberObject);			// номер объекта (0-9999)
@@ -59,11 +59,11 @@ namespace Form {
 		~Object();
 
 	private:
-		unsigned int directionConnect;					// Напрвление подключения (0-99)
-		unsigned int numberObject;						// номер объекта (0-9999)
-		int typePPC;									// тип устройства
-		unsigned long ipPPC;							// IP прибора
-		unsigned int portPPC;							// Port прибора
+		unsigned int directionConnect;								// Напрвление подключения (0-99)
+		unsigned int numberObject;									// номер объекта (0-9999)
+		int typePPC;												// тип устройства
+		unsigned long ipPPC;										// IP прибора
+		unsigned int portPPC;										// Port прибора
 	};
 
 //################################## Сервер ############ Настройки соединений пульта ##################################
@@ -89,10 +89,10 @@ namespace Form {
 		~SettingsServer();
 
 	private:
-		int typeProtocol;								// тип протокола (TCP/UDP)
-		int timeControl;								// время проверки наличия связи(сек)
-		unsigned long localHostIP;						// Свой IP
-		unsigned int localHostPort;						// свой Port
+		int typeProtocol;											// тип протокола (TCP/UDP)
+		int timeControl;											// время проверки наличия связи(сек)
+		unsigned long localHostIP;									// Свой IP
+		unsigned int localHostPort;									// свой Port
 	};
 
 //################################## Клиент ############ Настройки соединений пульта ##################################

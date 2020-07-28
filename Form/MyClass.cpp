@@ -51,11 +51,11 @@ namespace Form {
 	/// <summary> Конструктор создания объектового устройства по умолчанию </summary>
 	/// <returns></returns>
 	Object::Object() {	
-		this->directionConnect = directionConnectDef;	// Напрвление подключения (0-99)
-		this->numberObject = numberObjectDef;			// номер объекта (0-9999)
-		this->typePPC = typePPCDef;						// тип устройства
-		this->ipPPC = IPDef;							// IP прибора
-		this->portPPC = PortDef;						// Port прибора
+		this->directionConnect = 0;					// Напрвление подключения (0-99)
+		this->numberObject = 0;						// номер объекта (0-9999)
+		this->typePPC = 0;							// тип устройства
+		this->ipPPC = 0;							// IP прибора
+		this->portPPC = 10000;						// Port прибора
 	}
 	/// <summary> Деструктор объектового устройства </summary>
 	/// <returns></returns>

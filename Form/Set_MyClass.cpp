@@ -3,20 +3,20 @@
 namespace Form {
 
 
-	unsigned int Object::Set_directionConnect(unsigned int directionConnect) {	// Ќапрвление подключени€ (0-99)
-
+	unsigned int Object::Set_directionConnect(unsigned int directionConnect) {		// Ќапрвление подключени€ (0-99)
+		return this->directionConnect = directionConnect > 99 ? -1 : directionConnect;
 	}
-	unsigned int Object::Set_numberObject(unsigned int numberObject) {			// номер объекта (0-9999)
-
+	unsigned int Object::Set_numberObject(unsigned int numberObject) {				// номер объекта (0-9999)
+		return this->numberObject = numberObject > 9999 ? -1 : numberObject;
 	}
-	int Object::Set_typePPC(int typePPC) {						// тип устройства
-	
+	int Object::Set_typePPC(int typePPC) {											// тип устройства
+		return this->typePPC = typePPC;
 	}
 	unsigned long Object::Set_ipPPC(unsigned long ipPPC) {							// IP прибора
-
+		return this->ipPPC = ipPPC;
 	}
 	unsigned int Object::Set_portPPC(unsigned int portPPC) {						// Port прибора
-
+		return this->portPPC = portPPC;
 	}
 
 
@@ -24,7 +24,7 @@ namespace Form {
 	/// <summary> Set метод дл€ установки протокола </summary>
 	/// <param name="typeProtocol"></param>
 	/// <returns></returns>
-	int SettingsServer::Set_typeProtocol(int typeProtocol) {								// тип протокола (TCP/UDP)
+	int SettingsServer::Set_typeProtocol(int typeProtocol) {						// тип протокола (TCP/UDP)
 		if (typeProtocol != TCP && typeProtocol != UDP) 
 			typeProtocol = typeProtocolDef;
 		return this->typeProtocol = typeProtocol;
@@ -32,28 +32,28 @@ namespace Form {
 	/// <summary> Set метод дл€ установки времени ожидани€ данных дл€ контрол€ св€зи </summary>
 	/// <param name="timeControl"></param>
 	/// <returns></returns>
-	int SettingsServer::Set_timeControl(int timeControl) {									// врем€ проверки наличи€ св€зи(сек)
-		if (timeControl < timeControlMin) timeControl = timeControlMin;						// установим минимальное значение
+	int SettingsServer::Set_timeControl(int timeControl) {							// врем€ проверки наличи€ св€зи(сек)
+		if (timeControl < timeControlMin) timeControl = timeControlMin;				// установим минимальное значение
 		return this->timeControl = timeControl;
 	}
 	/// <summary> Set метод дл€ установки —воего IP </summary>
 	/// <param name="localHostIP"></param>
 	/// <returns></returns>
-	unsigned long SettingsServer::Set_localHostIP(unsigned long localHostIP) {				// —вой IP
+	unsigned long SettingsServer::Set_localHostIP(unsigned long localHostIP) {		// —вой IP
 		if (localHostIP < IP_Min) localHostIP = IPDef;
 		return this->localHostIP = localHostIP;
 	}
-	unsigned int SettingsServer::Set_localHostPort(unsigned int localHostPort) {			// свой Port
+	unsigned int SettingsServer::Set_localHostPort(unsigned int localHostPort) {	// свой Port
 		return this->localHostPort = localHostPort;
 	}
 
 //################################################################ IP  лиент ###########################################
 
-	unsigned long SettingsIPClient::Set_serverIP(unsigned long serverIP) {					// IP удаленного сервера
+	unsigned long SettingsIPClient::Set_serverIP(unsigned long serverIP) {			// IP удаленного сервера
 		if (serverIP < IP_Min) serverIP = IPDef;
 		return this->serverIP = serverIP;
 	}
-	unsigned int SettingsIPClient::Set_serverPort(unsigned int serverPort) {				// Port удаленного сервера
+	unsigned int SettingsIPClient::Set_serverPort(unsigned int serverPort) {		// Port удаленного сервера
 		return this->serverPort = serverPort;
 	}
 	unsigned long SettingsIPClient::Set_serverRezervIP(unsigned long serverRezervIP) {		// IP резервного удаленного сервера
