@@ -53,8 +53,6 @@ namespace Form {
 		unsigned long Set_ipPPC(unsigned long ipPPC);						// IP прибора
 		unsigned int Set_portPPC(unsigned int portPPC);						// Port прибора
 
-		
-
 		Object();
 		~Object();
 
